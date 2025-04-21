@@ -1,133 +1,99 @@
+@define-color base00 #181818;
+@define-color base01 #110170;/* Active Workspace */
+@define-color base02 #8105cc;/* Block background */
+@define-color base03 #585858;/* Dark font  */
+@define-color base04 #040215;/* Background */
+@define-color base05 #c0c7b0;/* Light font */
+@define-color base06 #e8e8e8;/* Mute font */
+@define-color base07 #f8f8f8;/* Background */
+@define-color base08 #ab4642;
+@define-color base09 #dc9656;
+@define-color base0A #f7ca88;
+@define-color base0B #a1b56c;
+@define-color base0C #86c1b9;
+@define-color base0D #7cafc2;
+@define-color base0E #ba8baf;
+@define-color base0F #a16946;
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: NotoSansMono Nerd Font;
-    font-weight: bold;
-    font-size: 14px;
-    min-height: 0;
+  transition: none;
+  box-shadow: none;
 }
 
-window#waybar {
-    background: #414868;
-    color: white;
+#waybar {
+	font-family: 'Cascadia Code SemiBold', sans-serif;
+	font-size: 1.0em;
+	font-weight: 400;
+  color: @base05;
+  background: @base04;
 }
 
-#workspaces {
-    background-color: #24283b;
-    margin: 5px;
-    margin-left: 10px;
-    border-radius: 5px;
-}
 #workspaces button {
-    padding: 5px 10px;
-    color: #c0caf5;
+  margin: 0 0;
+  padding: 0 4px;
+  color: @base05;
 }
 
-#workspaces button.focused {
-    color: #24283b;
-    background-color: #7aa2f7;
-    border-radius: 5px;
+#workspaces button.visible {
 }
 
-#workspaces button:hover {
-    background-color: #7dcfff;
-    color: #24283b;
-    border-radius: 5px;
+#workspaces button.active {
+  border-radius: 4px;
+  background-color: @base01;
 }
 
-#custom-menu {
-    background-color: #24283b;
-    color: #ffd700;
-    border-radius: 5px;
-    margin-right: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-}
-
-#custom-date, #clock, #battery, #pulseaudio, #network, #tray, #idle_inhibitor {
-    background-color: #24283b;
-    padding: 5px 10px;
-    margin: 5px 0px;
-}
-
-#custom-date {
-    color: #7dcfff;
-}
-
-#custom-power {
-    color: #24283b;
-    background-color: #db4b4b;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 0px;
-    padding: 5px 10px;
-}
-
-#clock {
-    color: #b48ead;
-    border-radius: 0px 5px 5px 0px;
-    margin-right: 10px;
-}
-
-#battery {
-    color: #9ece6a;
-}
-
-#battery.charging {
-    color: #9ece6a;
-}
-
-#battery.warning:not(.charging) {
-    background-color: #f7768e;
-    color: #24283b;
-    border-radius: 5px 5px 5px 5px;
-}
-
-#network {
-    color: #f7768e;
-    border-radius: 0px 0px 0px 0px;
+#workspaces button.urgent {
+  color: rgba(238, 46, 36, 1);
 }
 
 #tray {
-    color: #b48ead;
-    border-radius: 5px;
-    margin-right: 10px;
+  margin: 4px 4px 4px 4px;
+  border-radius: 4px;
+  background-color: @base02;
 }
 
-#pulseaudio {
-    color: #e0af68;
+#tray * {
+  padding: 0 6px;
+  border-left: 1px solid @base00;
 }
 
-#custom-notification {
-    background-color: #24283b;
-    padding: 5px 10px;
-    margin: 5px 0px;
-    color: #bb9af7;
-    border-radius: 5px 0px 0px 5px;
+#ltray *:first-child {
+  border-left: none;
 }
 
-#idle_inhibitor.activated {
-    color: green;
+#mode, #battery, #cpu, #workspaces, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-updates, #custom-weather, #custom-mail, #temperature, #language{
+  margin: 4px 4px;
+  padding: 2px 2px;
+  background-color: @base02;
+  border-radius: 4px;
+  min-width: 20px;
 }
 
-#idle_inhibitor.deactivated {
-    color: white;
+#idle_inhibitor {
+    padding: 2px 7px;
 }
 
-#custom-musikcube {
-    background-color: #24283b;
-    color: #9ece6a;
-    border-radius: 5px;
-    margin-right: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
+#pulseaudio.muted {
+  color: @base0F;
 }
 
+#pulseaudio.bluetooth {
+  color: @base0C;
+}
+
+#clock {
+  margin-right: 4px;
+  background-color: @base02;
+  border-radius: 4px;
+  min-width: 20px;
+  margin: 4px 4px;
+  padding: 0 5px;
+}
+
+#window {
+  font-size: 0.9em;
+	font-family: 'CaskaydiaCove NF SemiBold', sans-serif;
+	font-size: 1.0em;
+	font-weight: 400;
+  color: @base05;
+}

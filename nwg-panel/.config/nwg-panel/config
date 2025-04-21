@@ -17,7 +17,6 @@
     "icons": "",
     "css-name": "panel-top",
     "modules-left": [
-      "tray",
       "hyprland-workspaces"
     ],
     "modules-center": [
@@ -113,7 +112,7 @@
       ]
     },
     "clock": {
-      "format": "%X",
+      "format": "%H:%M",
       "tooltip-text": "",
       "on-left-click": "",
       "on-middle-click": "",
