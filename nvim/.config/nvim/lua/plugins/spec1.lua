@@ -1,7 +1,8 @@
 return {
 	-- the colorscheme should be available when starting Neovim
 	{
-		"ThePrimeagen/vim-be-good"
+		"ThePrimeagen/vim-be-good",
+        enabled = false
 	},
 }
 
