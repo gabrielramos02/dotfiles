@@ -1,6 +1,6 @@
 @define-color base00 #181818;
 @define-color base01 #110170;/* Active Workspace */
-@define-color base02 #8105cc;/* Block background */
+@define-color base02 #004687;/* Block background */
 @define-color base03 #585858;/* Dark font  */
 @define-color base04 #040215;/* Background */
 @define-color base05 #c0c7b0;/* Light font */
@@ -21,7 +21,7 @@
 }
 
 #waybar {
-	font-family: 'Cascadia Code SemiBold', sans-serif;
+	font-family: 'Cascadia Code', sans-serif;
 	font-size: 1.0em;
 	font-weight: 400;
   color: @base05;
