@@ -34,6 +34,8 @@ return {
 				vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
 				vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 				vim.keymap.set("n", "<CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+				vim.keymap.set("n", "]n", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next diagnostic" }, opts)
+				vim.keymap.set("n", "]N", "<cmd>lua vim.diagnostic.goto_previous()<cr>", { desc = "Previous diagnostic" }, opts)
 			end,
 		})
 
