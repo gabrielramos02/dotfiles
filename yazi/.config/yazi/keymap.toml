@@ -1,3 +1,13 @@
-[[mgr.prepend_keymap]]
-on  = "M"
-run = "plugin mount"
+
+[mgr]
+prepend_keymap = [
+    # Recycle-bin.yazi
+    { on = [
+        "R",
+        "b",
+    ], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
+    # Mount.yazi
+    { on = [
+        "M",
+    ], run = "plugin mount", desc = "Open Mount menu" },
+]

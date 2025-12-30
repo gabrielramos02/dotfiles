@@ -110,6 +110,8 @@ alias su-undervolt-lower='sudo /root/.local/bin/undervolt --core -150 --cache -1
 alias su-undervolt-restart='sudo /root/.local/bin/undervolt --core 0 --cache 0 --uncore 0 --gpu 0 -t 95'
 export PATH="$HOME/.development/flutter/bin:$PATH"
 export ANDROID_HOME=/opt/android-sdk
+export ANDROID_AVD_HOME=$HOME/.config/.android/avd
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias dolphin-apps= 'XDG_MENU_PREFIX=arch- kbuildsycoca6 --noincremental'
+eval "$(zoxide init zsh)"

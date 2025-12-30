@@ -3,6 +3,11 @@ use = "yazi-rs/plugins:mount"
 rev = "b886025"
 hash = "f10a14e823382d90fab5b3ee54cb38fe"
 
+[[plugin.deps]]
+use = "uhs-robert/recycle-bin"
+rev = "53ad17c"
+hash = "80221fe740a6f251d35845d29391bea7"
+
 [[flavor.deps]]
 use = "kalidyasin/yazi-flavors:tokyonight-night"
 rev = "fa19b40"
