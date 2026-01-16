@@ -59,13 +59,19 @@
       "left": [
         "dashboard",
         "workspaces",
-        "windowtitle"
+        "windowtitle",
+        "network"
       ],
       "middle": [
         "media"
       ],
       "right": [
         "volume",
+        "bluetooth",
+        "cpu",
+        "ram",
+        "battery",
+        "systray",
         "clock",
         "notifications"
       ]
