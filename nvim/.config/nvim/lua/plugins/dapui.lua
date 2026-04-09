@@ -4,6 +4,6 @@ return {
 	config = function()
 		require("dapui").setup()
 		local dapui = require("dapui")
-		vim.keymap.set("n", "<leader>do", dapui.open, { desc = "Dapui open " })
+		vim.keymap.set("n", "<leader>dp", dapui.open, { desc = "Dapui open " })
 	end,
 }

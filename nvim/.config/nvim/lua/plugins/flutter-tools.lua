@@ -21,7 +21,23 @@ return {
 				open_cmd = "belowright 15new", -- command to use to open the log buffer
 				focus_on_open = true, -- focus on the newly opened log window
 			},
+			debugger = {
+				enabled = true,
+				run_via_dap = true,
+				register_configurations = function(paths)
+					local dap = require("dap")
+					dap.adapters.dart = {
+						type = "executable",
+						command = paths.flutter_bin,
+						args = { "debug-adapter" },
+					}
+				end,
+			},
 		})
+		vim.keymap.set("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>")
+		vim.keymap.set("n", "<leader>dd", ":lua require('dap').continue()<CR>")
+		vim.keymap.set("n", "<leader>do", ":lua require('dap').step_over()<CR>")
+		vim.keymap.set("n", "<leader>di", ":lua require('dap').step_into()<CR>")
 		-- Telescope flutter
 		require("telescope").load_extension("flutter")
 		local flutter = require("telescope")

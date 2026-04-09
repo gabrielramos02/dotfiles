@@ -105,9 +105,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Created by `pipx` on 2025-07-11 07:04:35
 export PATH="$PATH:/home/gabriel/.local/bin"
-alias su-undervolt='sudo /root/.local/bin/undervolt "$@"'
-alias su-undervolt-lower='sudo /root/.local/bin/undervolt --core -150 --cache -150 --uncore -100 --gpu -160 -t 85'
-alias su-undervolt-restart='sudo /root/.local/bin/undervolt --core 0 --cache 0 --uncore 0 --gpu 0 -t 95'
+alias su-undervolt='sudo undervolt "$@"'
+alias su-undervolt-lower='sudo undervolt --core -150 --cache -150 --uncore -100 --gpu -160 -t 85'
+alias su-undervolt-restart='sudo undervolt --core 0 --cache 0 --uncore 0 --gpu 0 -t 95'
 export PATH="$HOME/.development/flutter/bin:$PATH"
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_AVD_HOME=$HOME/.config/.android/avd
