@@ -1,11 +1,11 @@
 return {
 	"nvim-flutter/flutter-tools.nvim",
-	lazy = false,
+	lazy = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
-	ft = dart,
+	ft = "dart",
 	config = function()
 		require("flutter-tools").setup({
 			outline = {
@@ -34,13 +34,14 @@ return {
 				end,
 			},
 		})
-		vim.keymap.set("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>")
-		vim.keymap.set("n", "<leader>dd", ":lua require('dap').continue()<CR>")
-		vim.keymap.set("n", "<leader>do", ":lua require('dap').step_over()<CR>")
-		vim.keymap.set("n", "<leader>di", ":lua require('dap').step_into()<CR>")
+        local map = vim.keymap.set
+		map("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>")
+		map("n", "<leader>dd", ":lua require('dap').continue()<CR>")
+		map("n", "<leader>do", ":lua require('dap').step_over()<CR>")
+		map("n", "<leader>di", ":lua require('dap').step_into()<CR>")
 		-- Telescope flutter
 		require("telescope").load_extension("flutter")
-		local flutter = require("telescope")
-		vim.keymap.set("n", "<leader>fc", flutter.extensions.flutter.commands)
+		local telescope = require("telescope")
+		map("n", "<leader>fc", telescope.extensions.flutter.commands)
 	end,
 }

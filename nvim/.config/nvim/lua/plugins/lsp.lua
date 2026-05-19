@@ -36,7 +36,7 @@ return {
 				vim.keymap.set("n", "<CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 				vim.keymap.set("n", "]n", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next diagnostic" }, opts)
 				vim.keymap.set("n", "]N", "<cmd>lua vim.diagnostic.goto_previous()<cr>", { desc = "Previous diagnostic" }, opts)
-                vim.keymap.set('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+                vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 			end,
 		})
 

@@ -1,5 +1,7 @@
 return {
     "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+        "williamboman/mason.nvim" },
     config = function()
         require("mason").setup({})
         require("mason-lspconfig").setup({
@@ -8,29 +10,28 @@ return {
             ensure_installed = { "lua_ls", "bashls", "basedpyright" },
             handlers = {
                 function(server_name)
-                    require("lspconfig")[server_name].setup({
+                    vim.lsp.config(server_name, {
                         on_init = function(client, _)
                             client.server_capabilities.semanticTokensProvider = nil
-                        end,
+                        end
                     })
                 end,
-                lua_ls = function()
-                    require('lspconfig').lua_ls.setup({
-                        settings = {
-                            Lua = {
-                                diagnostics = { globals = { 'vim' } },
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = {
-                                        vim.env.VIMRUNTIME,
-                                        vim.fn.stdpath('config'), -- Esto es clave para autocompletar tu config
-                                    },
+                vim.lsp.config('lua_ls', {
+                    settings = {
+                        Lua = {
+                            diagnostics = { globals = { 'vim' } },
+                            workspace = {
+                                checkThirdParty = false,
+                                library = {
+                                    vim.env.VIMRUNTIME,
+                                    vim.fn.stdpath('config'), -- Esto es clave para autocompletar tu config
                                 },
-                                telemetry = { enable = false },
                             },
+                            telemetry = { enable = false },
                         },
-                    })
-                end,
+                    },
+
+                }),
             },
         })
     end,
