@@ -48,6 +48,7 @@
         "volume",
         "bluetooth",
         "cpu",
+        "cputemp",
         "ram",
         "battery",
         "systray",
@@ -69,6 +70,7 @@
         "volume",
         "bluetooth",
         "cpu",
+        "cputemp",
         "ram",
         "battery",
         "systray",
@@ -503,5 +505,8 @@
   "theme.bar.transparent": true,
   "theme.bar.buttons.enableBorders": true,
   "theme.bar.buttons.borderSize": "0.1em",
-  "theme.bar.buttons.y_margins": "0.3em"
+  "theme.bar.buttons.y_margins": "0.3em",
+  "theme.bar.buttons.modules.cpuTemp.spacing": "0.25em",
+  "bar.customModules.cpuTemp.sensor": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon6/temp1_input",
+  "menus.volume.raiseMaximumVolume": false
 }

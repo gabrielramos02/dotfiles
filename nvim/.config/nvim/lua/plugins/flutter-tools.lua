@@ -22,7 +22,7 @@ return {
 				focus_on_open = true, -- focus on the newly opened log window
 			},
 			debugger = {
-				enabled = true,
+				enabled = false,
 				run_via_dap = true,
 				register_configurations = function(paths)
 					local dap = require("dap")

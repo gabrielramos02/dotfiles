@@ -1,8 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	cmd = "TSUpdate",
+    lazy = false,
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter").setup({
 			-- A list of parser names, or "all" (the listed parsers MUST always be installed)
 			ensure_installed = { "lua", "vim", "vimdoc", "markdown", "markdown_inline" },
 
@@ -21,7 +22,7 @@ return {
 				-- Instead of true it can also be a list of languages
 				additional_vim_regex_highlighting = false,
 			},
-			vim.api.nvim_set_hl(0, "@variable", { fg = "#E36397" }),
+			vim.api.nvim_set_hl(0, "@lsp.type.variable", { fg = "#E36397" }),
 		})
 	end,
 }
