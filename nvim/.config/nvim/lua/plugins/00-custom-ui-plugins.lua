@@ -15,5 +15,18 @@ return {
         {
             options = { theme = 'palenight' }
         }
+    },
+    {
+        "j-hui/fidget.nvim",
+        opts = {
+            -- options
+        },
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- Default settings usually work out of the box
+        }
     }
 }

@@ -4,9 +4,13 @@ return
         'stevearc/oil.nvim',
         ---@module 'oil'
         ---@type oil.SetupOpts
-        enabled =false,
+        enabled = true,
         config = function()
-            require("oil").setup({})
+            require("oil").setup({
+                win_options = {
+                    signcolumn = "yes:2"
+                }
+            })
             vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
         end,
         -- Optional dependencies
@@ -14,5 +18,11 @@ return
         -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
+    },
+    {
+
+        "refractalize/oil-git-status.nvim",
+        dependencies = { "stevearc/oil.nvim" },
+        config = true
     }
 }

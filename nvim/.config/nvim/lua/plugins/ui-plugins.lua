@@ -2,7 +2,7 @@ return {
     {
         'tpope/vim-fugitive',
         config = function()
-            vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+            vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Open Fugitive" })
         end
     },
     {
@@ -26,7 +26,8 @@ return {
     {
         'jiaoshijie/undotree',
         config = function()
-            vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>u', require('undotree').toggle,
+                { desc = "Open Undotree", noremap = true, silent = true })
             require('undotree').setup()
         end
     }
