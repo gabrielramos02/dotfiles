@@ -1,13 +1,53 @@
 return {
 	"nvim-flutter/flutter-tools.nvim",
-	lazy = true,
+	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
-	ft = "dart",
 	config = function()
 		require("flutter-tools").setup({
+			lsp = {
+				on_attach = function(client, bufnr)
+					-- flutter-tools will automatically setup the LSP keymaps, but you can use this callback to setup additional keymaps.
+					local opts = { buffer = bufnr, noremap = true, silent = true }
+					local map = vim.keymap.set
+					map(
+						"n",
+						"<leader>fb",
+						":lua require('dap').toggle_breakpoint()<CR>",
+						vim.tbl_extend("keep", opts, { desc = "Toggle Breakpoint" })
+					)
+					map(
+						"n",
+						"<leader>fd",
+						":lua require('dap').continue()<CR>",
+						vim.tbl_extend("keep", opts, { desc = "Debugger Continue" })
+					)
+					map(
+						"n",
+						"<leader>fo",
+						":lua require('dap').step_over()<CR>",
+						vim.tbl_extend("keep", opts, { desc = "Debugger Step Over" })
+					)
+					map(
+						"n",
+						"<leader>fi",
+						":lua require('dap').step_into()<CR>",
+						vim.tbl_extend("keep", opts, { desc = "Debugger Step Into" })
+					)
+					-- Telescope flutter
+					require("telescope").load_extension("flutter")
+					local telescope = require("telescope")
+					map(
+						"n",
+						"<leader>fc",
+						telescope.extensions.flutter.commands,
+						vim.tbl_extend("keep", opts, { desc = "Flutter Commands" })
+					)
+				end,
+			},
+			root_patterns = { ".git", "pubspec.yaml" },
 			decorations = {
 				statusline = {
 					app_version = true,
@@ -39,14 +79,5 @@ return {
 				end,
 			},
 		})
-		local map = vim.keymap.set
-		map("n", "<leader>fb", ":lua require('dap').toggle_breakpoint()<CR>", { desc = "Debugger Toggle Breakpoint" })
-		map("n", "<leader>fd", ":lua require('dap').continue()<CR>", { desc = "Debugger Continue" })
-		map("n", "<leader>fo", ":lua require('dap').step_over()<CR>", { desc = "Debugger Step Over" })
-		map("n", "<leader>fi", ":lua require('dap').step_into()<CR>", { desc = "Debugger Step Into" })
-		-- Telescope flutter
-		require("telescope").load_extension("flutter")
-		local telescope = require("telescope")
-		map("n", "<leader>fc", telescope.extensions.flutter.commands, { desc = "Telescope Flutter commands" })
 	end,
 }
