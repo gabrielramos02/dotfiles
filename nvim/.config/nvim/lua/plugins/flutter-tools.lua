@@ -36,6 +36,12 @@ return {
 						":lua require('dap').step_into()<CR>",
 						vim.tbl_extend("keep", opts, { desc = "Debugger Step Into" })
 					)
+					map(
+						"n",
+						"<leader>fl",
+						":FlutterLogToggle<CR>",
+						vim.tbl_extend("keep", opts, { desc = "Flutter Toggle Log " })
+					)
 					-- Telescope flutter
 					require("telescope").load_extension("flutter")
 					local telescope = require("telescope")
