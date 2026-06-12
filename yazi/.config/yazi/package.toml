@@ -8,6 +8,11 @@ use = "uhs-robert/recycle-bin"
 rev = "53ad17c"
 hash = "80221fe740a6f251d35845d29391bea7"
 
+[[plugin.deps]]
+use = "AnirudhG07/archivemount"
+rev = "3d353c4"
+hash = "28caf2541e627582e75add7a9f98a32a"
+
 [[flavor.deps]]
 use = "kalidyasin/yazi-flavors:tokyonight-night"
 rev = "fa19b40"
