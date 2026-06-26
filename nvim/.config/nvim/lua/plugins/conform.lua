@@ -1,6 +1,7 @@
 return {
 	{
 		"stevearc/conform.nvim",
+		enabled = false,
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
 		keys = {
@@ -18,6 +19,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
+				python = { "black" },
 				yaml = { "prettierd", "prettier" },
 			},
 			format_on_save = {
