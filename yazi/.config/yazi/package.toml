@@ -13,6 +13,16 @@ use = "AnirudhG07/archivemount"
 rev = "3d353c4"
 hash = "28caf2541e627582e75add7a9f98a32a"
 
+[[plugin.deps]]
+use = "gabrielramos02/fuse-archive"
+rev = "11f92da"
+hash = "6a6d24880ce7666048fb81ad758c48d3"
+
+[[plugin.deps]]
+use = "Ape/smart-enter"
+rev = "1c835cc"
+hash = "d6d6fa001c2cda9dda6eb5bc6beb96b7"
+
 [[flavor.deps]]
 use = "kalidyasin/yazi-flavors:tokyonight-night"
 rev = "fa19b40"

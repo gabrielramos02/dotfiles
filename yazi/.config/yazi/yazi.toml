@@ -8,3 +8,6 @@ edit = [
 open = [
 	{ run = 'xdg-open "$@"', desc = "Open" },
 ]
+extract = [
+
+]

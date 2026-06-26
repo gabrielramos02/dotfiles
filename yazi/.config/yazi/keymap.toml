@@ -1,13 +1,17 @@
-
 [mgr]
 prepend_keymap = [
-    # Recycle-bin.yazi
-    { on = [
-        "R",
-        "b",
-    ], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
-    # Mount.yazi
-    { on = [
-        "M",
-    ], run = "plugin mount", desc = "Open Mount menu" },
-]
+  # Recycle-bin.yazi
+  { on = [
+    "R",
+    "b",
+  ], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
+  # Mount.yazi
+  { on = [
+    "M",
+  ], run = "plugin mount", desc = "Open Mount menu" },
+  # fuse.archive
+  { on = ["<Right>"], run = "plugin fuse-archive --args=mount", desc = "Enter or Mount selected archive" },
+  { on = ["<Left>"], run = "plugin fuse-archive --args=unmount", desc = "Leave or Unmount selected archive" },
+  # Smart Enter 
+  { on = ["<Enter>"],run = "plugin smart-enter", desc = "Enter child directory, or open file"}
+] 
