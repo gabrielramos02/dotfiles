@@ -62,7 +62,7 @@ local menu = "rofi -show drun"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	hl.exec_cmd("hyprpanel & hyprpaper")
+	hl.exec_cmd("wayle panel start & hyprpaper")
 	hl.exec_cmd("XDG_MENU_PREFIX=arch- kbuildsycoca6 --noincremental")
 end)
 

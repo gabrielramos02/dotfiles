@@ -508,5 +508,6 @@
   "theme.bar.buttons.y_margins": "0.3em",
   "theme.bar.buttons.modules.cpuTemp.spacing": "0.25em",
   "bar.customModules.cpuTemp.sensor": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon6/temp1_input",
-  "menus.volume.raiseMaximumVolume": false
+  "menus.volume.raiseMaximumVolume": false,
+  "bar.customModules.ram.labelType": "used/total"
 }

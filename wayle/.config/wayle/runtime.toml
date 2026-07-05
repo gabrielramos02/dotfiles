@@ -1,0 +1,90 @@
+[general]
+font-sans = "Cascadia Code NF"
+
+[bar]
+bg = "transparent"
+button-variant = "basic"
+button-icon-size = 0.8500000238418579
+button-icon-padding = 0.8500000238418579
+button-label-size = 0.949999988079071
+button-label-padding = 1.100000023841858
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "dashboard",
+    "hyprland-workspaces",
+    "window-title",
+    "network",
+]
+center = ["media"]
+right = [
+    "volume",
+    "bluetooth",
+    "cpu",
+    "ram",
+    "battery",
+    "systray",
+    "clock",
+    "notifications",
+]
+
+[styling]
+scale = 0.9599999785423279
+rounding = "md"
+
+[styling.palette]
+bg = "#16161e"
+surface = "#1a1b26"
+elevated = "#292e42"
+fg = "#c0caf5"
+fg-muted = "#a9b1d6"
+primary = "#7aa2f7"
+red = "#f7768e"
+yellow = "#e0af68"
+green = "#9ece6a"
+blue = "#7dcfff"
+
+[modules.battery]
+border-show = true
+
+[modules.bluetooth]
+border-show = true
+label-show = false
+
+[modules.brightness]
+border-show = true
+
+[modules.clock]
+format = "%a %b %d %H:%M"
+border-show = true
+
+[modules.cpu]
+format = "{{ percent }}% {{ temp_c}}°C "
+border-show = true
+
+[modules.hyprland-workspaces]
+display-mode = "none"
+app-icons-show = true
+
+[modules.media]
+border-show = true
+
+[modules.network]
+border-show = true
+
+[modules.notifications]
+border-show = true
+
+[modules.ram]
+border-show = true
+
+[modules.systray]
+border-show = true
+
+[modules.volume]
+border-show = true
+
+[wallpaper]
+engine-enabled = false
