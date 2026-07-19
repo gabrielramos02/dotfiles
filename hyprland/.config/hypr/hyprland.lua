@@ -32,7 +32,7 @@ hl.monitor({
 })
 
 hl.monitor({
-	output = "DP-3",
+	output = "desc:Microstep MAG 275CQ E18 CE9H105600459",
 	mode = "highrr",
 	position = "auto",
 	vrr = 1,
@@ -264,9 +264,10 @@ hl.gesture({
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
+-- mouse config
 hl.device({
-	name = "epic-mouse-v1",
-	sensitivity = -0.5,
+	name = "2.4g-wireless-device-2",
+	sensitivity = -0.50,
 })
 
 ---------------------
@@ -391,6 +392,25 @@ hl.window_rule({
 
 	no_focus = true,
 })
+
+local monitors = hl.get_monitors()
+-- CLOSING LID ON DOCKER MODE
+hl.bind("switch:on:Lid Switch", function()
+	if #monitors > 1 then
+		hl.dispatch(hl.dsp.dpms({ action = "off", monitor = "eDP-1" }))
+		hl.dispatch(hl.dsp.workspace.swap_monitors({ monitor1 = 0, monitor2 = 1 }))
+		local workspaces = hl.get_workspaces()
+		for _, w in ipairs(workspaces) do
+			hl.dispatch(hl.dsp.workspace.move({ workspace = w, monitor = 1 }))
+		end
+	end
+end, { locked = true })
+---- Open Lid
+hl.bind("switch:off:Lid Switch", function()
+	if #monitors > 1 then
+		hl.dispatch(hl.dsp.dpms({ action = "on", monitor = "eDP-1" }))
+	end
+end, { locked = true })
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
