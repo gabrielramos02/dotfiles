@@ -1,7 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	cmd = "TSUpdate",
     lazy = false,
+    build = ':TSUpdate',
 	config = function()
 		require("nvim-treesitter").setup({
 			-- A list of parser names, or "all" (the listed parsers MUST always be installed)
